@@ -65,7 +65,6 @@ public class EmployeeController {
             @RequestBody Map<String, Object> employeeDetails) {
         return new ResponseEntity<>(employeeService.updateEmployeePartiallyById(employeeId, employeeDetails),
                 HttpStatus.OK);
-
     }
 
 }

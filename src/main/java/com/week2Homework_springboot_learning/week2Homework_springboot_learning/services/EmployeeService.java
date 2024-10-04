@@ -66,6 +66,7 @@ public class EmployeeService {
         isEmployeeExistsById(employeeId);
         EmployeeEntity employeeEntity = employeeRepository.findById(employeeId).get();
         employeeDetails.forEach((key, value) -> {
+            System.out.println("key" + key + "value" + value);
             Field fieldToUpdate = ReflectionUtils.findRequiredField(EmployeeEntity.class, key);
             fieldToUpdate.setAccessible(true);
             ReflectionUtils.setField(fieldToUpdate, employeeEntity, value);
